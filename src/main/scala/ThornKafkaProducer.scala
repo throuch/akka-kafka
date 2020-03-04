@@ -7,7 +7,7 @@ import org.json4s.DefaultFormats
 
 trait ThornKafkaProducer {
   val config = context.system.settings.config.getConfig("akka.kafka.producer")
-   implicit val formats = DefaultFormats
+  implicit val formats = DefaultFormats
 
   lazy val producerSettings =
     ProducerSettings(config, new StringSerializer, new StringSerializer)
